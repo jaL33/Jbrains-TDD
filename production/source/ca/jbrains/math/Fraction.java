@@ -1,5 +1,7 @@
 package ca.jbrains.math;
 
+import java.awt.*;
+
 public class Fraction {
     private final int denominator;
     private final int numerator;
@@ -22,10 +24,25 @@ public class Fraction {
     }
 
     public int getNumerator() {
-        return 3;
+        return numerator;
     }
 
     public int getDenominator() {
         return denominator;
+    }
+
+    @Override
+    public boolean equals(Object other){
+        if (other instanceof Fraction){
+            Fraction that = (Fraction) other;
+            return this.numerator == that.numerator
+                    && this.denominator == that.denominator;
+         }
+        return super.equals(other);
+    }
+
+    @Override
+    public String toString(){
+        return String.format("%d/%d", numerator, denominator);
     }
 }
