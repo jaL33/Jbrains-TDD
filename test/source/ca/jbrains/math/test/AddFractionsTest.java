@@ -1,38 +1,34 @@
 package ca.jbrains.math.test;
 
 import ca.jbrains.math.Fraction;
-import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class AddFractionsTest {
     @Test
     public void zeroPlusZero()throws Exception{
-        assertEquals(0, new Fraction(0).plus(new Fraction(0)).intValue()); //this is a one line version of the codes.
+        //this is a one line version of the codes.
+        assertEquals(new Fraction(0), new Fraction(0).plus(new Fraction(0)));
     }
 
     @Test
     public void nonZeroPlusZero() throws Exception{
-        final Fraction sum = new Fraction(3).plus(new Fraction(0));
-        assertEquals(3,sum.intValue());
+        assertEquals(new Fraction(3), new Fraction(3).plus(new Fraction(0)));
     }
 
     @Test
     public void nonZeroPlusNonZero() throws Exception{
-        final Fraction sum = new Fraction(0).plus(new Fraction(5));
-        assertEquals(5,sum.intValue());
+        assertEquals(new Fraction(5), new Fraction(0).plus(new Fraction(5)));
     }
 
     @Test
     public void nonNegativeNonZeroOperands() throws Exception{
-        final Fraction sum = new Fraction(3).plus(new Fraction(4));
-        assertEquals(7, sum.intValue());
+        assertEquals(new Fraction(7), new Fraction(3).plus(new Fraction(4)));
     }
 
     @Test
     public void negativeInputsAndNegativeOutputs() throws Exception{
-        final Fraction sum = new Fraction(-3).plus(new Fraction(1));
-        assertEquals(-2, sum.intValue());
+        assertEquals(new Fraction(-2), new Fraction(-3).plus(new Fraction(1)));
     }
 
     @Test
